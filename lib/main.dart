@@ -2,7 +2,6 @@ import 'package:ecommerce_app/constants/global_variables.dart';
 import 'package:ecommerce_app/features/auth/screens/auth_screen.dart';
 import 'package:ecommerce_app/router.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(const MyApp());

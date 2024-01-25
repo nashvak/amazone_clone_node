@@ -63,7 +63,7 @@ class _AuthScreenState extends State<AuthScreen> {
             ),
             if (_auth == Auth.signup)
               Container(
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 color: GlobalVariables.backgroundColor,
                 child: Form(
                   key: signupFormKey,
@@ -71,17 +71,17 @@ class _AuthScreenState extends State<AuthScreen> {
                     children: [
                       CustomTextField(
                           controller: nameController, hintText: 'Name'),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       CustomTextField(
                           controller: emailController, hintText: 'Email'),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       CustomTextField(
                           controller: passwordController, hintText: 'Password'),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       CustomButton(text: 'Sign Up', onTap: () {})
@@ -110,7 +110,7 @@ class _AuthScreenState extends State<AuthScreen> {
             ),
             if (_auth == Auth.signin)
               Container(
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 color: GlobalVariables.backgroundColor,
                 child: Form(
                   key: signinFormKey,
@@ -118,12 +118,12 @@ class _AuthScreenState extends State<AuthScreen> {
                     children: [
                       CustomTextField(
                           controller: emailController, hintText: 'Email'),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       CustomTextField(
                           controller: passwordController, hintText: 'Password'),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       CustomButton(text: 'Sign Up', onTap: () {})
