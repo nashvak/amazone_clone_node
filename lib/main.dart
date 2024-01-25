@@ -14,28 +14,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Ecommerce',
-      theme: ThemeData(
-        scaffoldBackgroundColor: GlobalVariables.backgroundColor,
-        colorScheme: const ColorScheme.light(
-          primary: GlobalVariables.secondaryColor,
+        title: 'Ecommerce',
+        theme: ThemeData(
+          scaffoldBackgroundColor: GlobalVariables.backgroundColor,
+          colorScheme: const ColorScheme.light(
+            primary: GlobalVariables.secondaryColor,
+          ),
+          appBarTheme: const AppBarTheme(
+            elevation: 0,
+            iconTheme: IconThemeData(color: Colors.black),
+          ),
+          // useMaterial3: true,
         ),
-        appBarTheme: const AppBarTheme(
-          elevation: 0,
-          iconTheme: IconThemeData(color: Colors.black),
-        ),
-        useMaterial3: true,
-      ),
-      onGenerateRoute: ((settings) => generateRoute(settings)),
-      home: Scaffold(body: Center(
-        child: Builder(builder: (context) {
-          return ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, AuthScreen.routename);
-              },
-              child: Text("click"));
-        }),
-      )),
-    );
+        onGenerateRoute: ((settings) => generateRoute(settings)),
+        home: const AuthScreen());
   }
 }
