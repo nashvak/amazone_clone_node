@@ -1,5 +1,8 @@
 import 'package:ecommerce_app/constants/global_variables.dart';
+import 'package:ecommerce_app/features/auth/screens/auth_screen.dart';
+import 'package:ecommerce_app/router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +26,16 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const Scaffold(body: Text('fsd')),
+      onGenerateRoute: ((settings) => generateRoute(settings)),
+      home: Scaffold(body: Center(
+        child: Builder(builder: (context) {
+          return ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, AuthScreen.routename);
+              },
+              child: Text("click"));
+        }),
+      )),
     );
   }
 }
