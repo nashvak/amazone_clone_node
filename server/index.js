@@ -1,11 +1,20 @@
-console.log("Hello world");
+//  IMPORT FROM PACKAGES
 const express=require('express');
+
+const mongoose=require('mongoose')
+//change password here
+const db='mongodb+srv://nashvakizhakkayil:monsterasif@cluster0.demz3g6.mongodb.net/?retryWrites=true&w=majority';
+//IMPORTS FROM OTHER FILES
+const authRouter=require('./routes/auth.js');
+//  INITIALIZATION
 const PORT=3000;
 const app=express();
-// C R E A T I N G     A N    A P I
+//  MIDDLEWARE
 
-app.get("/hello-world",(req,res)=>{
-    res.json({hi:"nashva"});
-});
+app.use(authRouter);
+//connections
+mongoose.connect(db).then(()=>{
+console.log("connection succesfull");
+}).catch((e)=>console.log(e));
 
 app.listen(PORT,()=>{console.log(`connected at port ${PORT} `);});
