@@ -1,10 +1,14 @@
+import 'package:ecommerce_app/common/error_handling.dart';
+import 'package:ecommerce_app/common/utils.dart';
 import 'package:ecommerce_app/constants/global_variables.dart';
 import 'package:ecommerce_app/features/auth/models/models.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class AuthService {
   //sign up user
   void signUpUser({
+    required BuildContext context,
     required String email,
     required String password,
     required String name,
@@ -25,7 +29,17 @@ class AuthService {
           'Content-Type': 'application/json; charset=UTF-8',
         },
       );
-      print(response);
-    } catch (e) {}
+      print(response.body);
+      // ignore: use_build_context_synchronously
+      httpErrorHandle(
+          response: response,
+          context: context,
+          onSuccess: () {
+            showSnackbar(context, 'Account has been created!');
+          });
+    } catch (e) {
+      // ignore: use_build_context_synchronously
+      showSnackbar(context, e.toString());
+    }
   }
 }
