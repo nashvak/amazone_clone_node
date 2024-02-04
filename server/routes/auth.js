@@ -28,5 +28,20 @@ authRouter.post('/api/signup',async (req,res)=>{
         res.status(500).json({error:e.message});
 
     }
+}),
+
+//signin route
+//hashing to convert the hashed password to string
+authRouter.post('/api/signin',async(req,res)=>{
+    try {
+        const {email,password}=req.body;
+        const user=await User.findOne({email});
+    if(!user){
+        return res.status(400).json({msg:'User does not exists'});
+    }
+    } catch (e) {
+        res.status(500).json({error:e.message})
+    }
 })
+
 module.exports=authRouter;
