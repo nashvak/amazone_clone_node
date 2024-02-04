@@ -1,4 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
+import 'dart:convert';
+
 import 'package:ecommerce_app/common/error_handling.dart';
 import 'package:ecommerce_app/common/utils.dart';
 import 'package:ecommerce_app/constants/global_variables.dart';
@@ -39,6 +41,34 @@ class AuthService {
           onSuccess: () {
             showSnackbar(context,
                 'Account Has Been Created You Can Login With Same Credentials');
+          });
+    } catch (e) {
+      print('error occured');
+      showSnackbar(context, e.toString());
+    }
+  }
+
+  //  sign in user
+
+  void signInUser({
+    required BuildContext context,
+    required String email,
+    required String password,
+  }) async {
+    try {
+      http.Response response = await http.post(
+        Uri.parse('$uri/api/signin'),
+        body: jsonEncode({"email": email, "password": password}),
+        headers: <String, String>{
+          'Content-type': 'application/json;charset=UTF-8',
+        },
+      );
+      print(response.body);
+      httpErrorHandle(
+          response: response,
+          context: context,
+          onSuccess: () {
+            showSnackbar(context, 'Login succesfully.!');
           });
     } catch (e) {
       print('error occured');
