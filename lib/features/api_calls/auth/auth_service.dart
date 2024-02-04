@@ -4,9 +4,13 @@ import 'dart:convert';
 import 'package:ecommerce_app/common/error_handling.dart';
 import 'package:ecommerce_app/common/utils.dart';
 import 'package:ecommerce_app/constants/global_variables.dart';
-import 'package:ecommerce_app/features/auth/models/models.dart';
+import 'package:ecommerce_app/features/models/models.dart';
+import 'package:ecommerce_app/features/providers/auth/user_provider.dart';
+import 'package:ecommerce_app/features/screens/home/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:provider/provider.dart';
 
 class AuthService {
   //sign up user
@@ -34,7 +38,7 @@ class AuthService {
           'Content-type': 'application/json;charset=UTF-8',
         },
       );
-
+      print(response.body);
       httpErrorHandle(
           response: response,
           context: context,
@@ -67,8 +71,16 @@ class AuthService {
       httpErrorHandle(
           response: response,
           context: context,
-          onSuccess: () {
-            showSnackbar(context, 'Login succesfully.!');
+          onSuccess: () async {
+            SharedPreferences prefs = await SharedPreferences.getInstance();
+            Provider.of<UserProvider>(context, listen: false)
+                .setUser(response.body);
+            await prefs.setString(
+                'x-auth-token', jsonDecode(response.body)['token']);
+
+            // showSnackbar(context, 'Login succesfully.!');
+            Navigator.pushNamedAndRemoveUntil(
+                context, HomeScreen.routeName, (route) => false);
           });
     } catch (e) {
       print('error occured');

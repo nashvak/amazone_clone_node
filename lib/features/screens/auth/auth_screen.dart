@@ -3,12 +3,12 @@ import 'package:ecommerce_app/common/custom_textfield.dart';
 import 'package:ecommerce_app/constants/global_variables.dart';
 import 'package:flutter/material.dart';
 
-import 'auth_service.dart';
+import '../../api_calls/auth/auth_service.dart';
 
 enum Auth { signin, signup }
 
 class AuthScreen extends StatefulWidget {
-  static const String routename = '/auth_screen';
+  static const String routeName = '/auth_screen';
   const AuthScreen({super.key});
 
   @override
