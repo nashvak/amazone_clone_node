@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/features/screens/auth/auth_screen.dart';
+import 'package:ecommerce_app/features/screens/home/bottonbar.dart';
 import 'package:ecommerce_app/features/screens/home/homescreen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,11 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
       return MaterialPageRoute(
         settings: routeSettings,
         builder: (_) => const HomeScreen(),
+      );
+    case BottomBar.routeName:
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => const BottomBar(),
       );
     default:
       return MaterialPageRoute(

@@ -6,6 +6,7 @@ import 'package:ecommerce_app/common/utils.dart';
 import 'package:ecommerce_app/constants/global_variables.dart';
 import 'package:ecommerce_app/features/models/models.dart';
 import 'package:ecommerce_app/features/providers/auth/user_provider.dart';
+import 'package:ecommerce_app/features/screens/home/bottonbar.dart';
 import 'package:ecommerce_app/features/screens/home/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -80,7 +81,7 @@ class AuthService {
 
             // showSnackbar(context, 'Login succesfully.!');
             Navigator.pushNamedAndRemoveUntil(
-                context, HomeScreen.routeName, (route) => false);
+                context, BottomBar.routeName, (route) => false);
           });
     } catch (e) {
       print('error occured');
