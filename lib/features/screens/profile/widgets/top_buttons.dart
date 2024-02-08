@@ -18,6 +18,13 @@ class TopButtons extends StatelessWidget {
               text: 'Turn reseller',
               onTap: () {},
             ),
+          ],
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Row(
+          children: [
             AccountButton(
               text: 'Logout',
               onTap: () {},

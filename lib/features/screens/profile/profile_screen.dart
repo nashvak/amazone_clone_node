@@ -1,3 +1,5 @@
+import 'package:ecommerce_app/features/screens/profile/widgets/orders.dart';
+import 'package:ecommerce_app/features/screens/profile/widgets/top_buttons.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants/global_variables.dart';
@@ -54,9 +56,17 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ),
       ),
-      body: Column(
+      body: const Column(
         children: [
           BelowAppbar(),
+          SizedBox(
+            height: 10,
+          ),
+          TopButtons(),
+          SizedBox(
+            height: 20,
+          ),
+          YourOrders(),
         ],
       ),
     );
