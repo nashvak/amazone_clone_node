@@ -1,6 +1,6 @@
-import 'package:ecommerce_app/features/screens/cart/cart_screen.dart';
-import 'package:ecommerce_app/features/screens/home/homescreen.dart';
-import 'package:ecommerce_app/features/screens/profile/profile_screen.dart';
+import 'package:ecommerce_app/screens/cart/cart_screen.dart';
+import 'package:ecommerce_app/screens/home/homescreen.dart';
+import 'package:ecommerce_app/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import '../../../constants/global_variables.dart';
 
@@ -17,9 +17,9 @@ class _BottomBarState extends State<BottomBar> {
   double bottomBarWidth = 42;
   double bottomBarBorderWidth = 5;
   List<Widget> pages = [
-    HomeScreen(),
-    ProfilePage(),
-    CartScreen(),
+    const HomeScreen(),
+    const ProfilePage(),
+    const CartScreen(),
   ];
   @override
   Widget build(BuildContext context) {

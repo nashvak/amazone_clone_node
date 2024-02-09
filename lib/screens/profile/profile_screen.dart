@@ -1,8 +1,8 @@
-import 'package:ecommerce_app/features/screens/profile/widgets/orders.dart';
-import 'package:ecommerce_app/features/screens/profile/widgets/top_buttons.dart';
+import 'package:ecommerce_app/screens/profile/widgets/orders.dart';
+import 'package:ecommerce_app/screens/profile/widgets/top_buttons.dart';
 import 'package:flutter/material.dart';
 
-import '../../../constants/global_variables.dart';
+import '../../constants/global_variables.dart';
 import 'widgets/below_appbar.dart';
 
 class ProfilePage extends StatefulWidget {

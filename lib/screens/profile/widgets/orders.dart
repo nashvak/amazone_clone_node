@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../constants/global_variables.dart';
+import '../../../constants/global_variables.dart';
 import 'single_product.dart';
 
 class YourOrders extends StatefulWidget {
@@ -11,9 +11,9 @@ class YourOrders extends StatefulWidget {
 }
 
 class _YourOrdersState extends State<YourOrders> {
-  List list = [
-    'https://unsplash.com/photos/space-gray-iphone-6-on-white-textile-8l9VxXI28tY',
-    'https://unsplash.com/photos/black-and-gray-laptop-computer-p0UwQ-Wd8TM',
+  List<String> imageList = [
+    'https://cdn.tmobile.com/content/dam/t-mobile/en-p/cell-phones/apple/Apple-iPhone-15-Pro/Blue-Titanium/Apple-iPhone-15-Pro-Blue-Titanium-thumbnail.png',
+    'https://i.gadgets360cdn.com/products/large/Oppo-Reno-10-Pro-Plus-5G-DB-709x800-1685018454.jpg'
   ];
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class _YourOrdersState extends State<YourOrders> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 'Your Orders',
                 style: TextStyle(
                   fontSize: 18,
@@ -52,7 +52,7 @@ class _YourOrdersState extends State<YourOrders> {
           ),
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: list.length,
+            itemCount: imageList.length,
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
@@ -63,7 +63,7 @@ class _YourOrdersState extends State<YourOrders> {
                   // );
                 },
                 child: SingleProduct(
-                  image: list[index],
+                  image: imageList[index],
                 ),
               );
             },

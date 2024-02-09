@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/constants/global_variables.dart';
-import 'package:ecommerce_app/features/providers/auth/user_provider.dart';
-import 'package:ecommerce_app/features/screens/auth/auth_screen.dart';
+import 'package:ecommerce_app/providers/auth/user_provider.dart';
+// import 'package:ecommerce_app/screens/auth/auth_screen.dart';
+import 'package:ecommerce_app/screens/home/widgets/bottonbar.dart';
 import 'package:ecommerce_app/router.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
             // useMaterial3: true,
           ),
           onGenerateRoute: ((settings) => generateRoute(settings)),
-          home: const AuthScreen()),
+          home: const BottomBar()),
     );
   }
 }
