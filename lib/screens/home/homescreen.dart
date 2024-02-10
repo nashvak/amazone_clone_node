@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/providers/auth/user_provider.dart';
 import 'package:ecommerce_app/screens/home/widgets/address_box.dart';
+import 'package:ecommerce_app/screens/home/widgets/top_catagories.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/global_variables.dart';
@@ -88,6 +89,7 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
+            TopCategories(),
           ],
         ));
   }
