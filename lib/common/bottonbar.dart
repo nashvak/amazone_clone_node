@@ -2,7 +2,7 @@ import 'package:ecommerce_app/screens/cart/cart_screen.dart';
 import 'package:ecommerce_app/screens/home/homescreen.dart';
 import 'package:ecommerce_app/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
-import '../../../constants/global_variables.dart';
+import '../constants/global_variables.dart';
 
 class BottomBar extends StatefulWidget {
   static const String routeName = '/actual-home';

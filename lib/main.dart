@@ -1,8 +1,8 @@
 import 'package:ecommerce_app/constants/global_variables.dart';
 import 'package:ecommerce_app/providers/auth/user_provider.dart';
 // import 'package:ecommerce_app/screens/auth/auth_screen.dart';
-import 'package:ecommerce_app/screens/home/widgets/bottonbar.dart';
-import 'package:ecommerce_app/router.dart';
+import 'package:ecommerce_app/common/bottonbar.dart';
+import 'package:ecommerce_app/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

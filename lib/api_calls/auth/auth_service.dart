@@ -6,7 +6,7 @@ import 'package:ecommerce_app/common/utils.dart';
 import 'package:ecommerce_app/constants/global_variables.dart';
 import 'package:ecommerce_app/models/models.dart';
 import 'package:ecommerce_app/providers/auth/user_provider.dart';
-import 'package:ecommerce_app/screens/home/widgets/bottonbar.dart';
+import 'package:ecommerce_app/common/bottonbar.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
