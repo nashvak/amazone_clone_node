@@ -1,4 +1,5 @@
 import 'package:dotted_border/dotted_border.dart';
+import 'package:ecommerce_app/common/custom_button.dart';
 import 'package:ecommerce_app/common/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
@@ -29,11 +30,20 @@ class _AddProductScreenState extends State<AddProductScreen> {
     priceController.dispose();
   }
 
+  List<String> productCategories = [
+    'Mobiles',
+    'Essentials',
+    'Appliances',
+    'Books',
+    'Fashions',
+  ];
+  String category = 'Mobiles';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50),
+        preferredSize: const Size.fromHeight(50),
         child: AppBar(
           elevation: 0,
           flexibleSpace: Container(
@@ -41,7 +51,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
               gradient: GlobalVariables.appBarGradient,
             ),
           ),
-          title: Text(
+          title: const Text(
             'Add Product',
             // style: TextStyle(),
           ),
@@ -53,12 +63,12 @@ class _AddProductScreenState extends State<AddProductScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 DottedBorder(
                   borderType: BorderType.RRect,
-                  radius: Radius.circular(10),
+                  radius: const Radius.circular(10),
                   dashPattern: [10, 4],
                   strokeCap: StrokeCap.round,
                   child: Container(
@@ -67,7 +77,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Column(
+                    child: const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(Icons.folder_open),
@@ -76,12 +86,12 @@ class _AddProductScreenState extends State<AddProductScreen> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 CustomTextField(
                     controller: nameController, hintText: ' Product Name'),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 CustomTextField(
@@ -89,22 +99,41 @@ class _AddProductScreenState extends State<AddProductScreen> {
                   hintText: ' Description',
                   maxLines: 7,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 CustomTextField(
                     controller: priceController, hintText: ' Price'),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 CustomTextField(
                     controller: quantityController, hintText: ' Quantity'),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 SizedBox(
-                  width: ,
-                )
+                  width: double.infinity,
+                  child: DropdownButton<String>(
+                    value: category,
+                    icon: Icon(Icons.keyboard_arrow_down),
+                    items: productCategories.map((String item) {
+                      return DropdownMenuItem(
+                        value: item,
+                        child: Text(item),
+                      );
+                    }).toList(),
+                    onChanged: (String? value) {
+                      setState(() {
+                        category = value!;
+                      });
+                    },
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                CustomButton(text: 'Add', onTap: () {})
               ],
             ),
           ),
