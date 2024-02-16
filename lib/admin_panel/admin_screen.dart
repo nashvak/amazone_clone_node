@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/admin_panel/screens/posts_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/global_variables.dart';
@@ -15,9 +16,7 @@ class _AdminScreenState extends State<AdminScreen> {
   double bottomBarWidth = 42;
   double bottomBarBorderWidth = 5;
   List<Widget> pages = [
-    const Center(
-      child: Text('dfs'),
-    ),
+    const PostsScreen(),
     const Center(
       child: Text('dfs'),
     ),
