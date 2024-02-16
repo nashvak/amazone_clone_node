@@ -22,26 +22,27 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => UserProvider()),
       ],
       child: MaterialApp(
-          title: 'Amazone',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            scaffoldBackgroundColor: GlobalVariables.backgroundColor,
-            colorScheme: const ColorScheme.light(
-              primary: GlobalVariables.secondaryColor,
-            ),
-            appBarTheme: const AppBarTheme(
-              elevation: 0,
-              iconTheme: IconThemeData(color: Colors.black),
-            ),
-            // useMaterial3: true,
+        title: 'Amazone',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          scaffoldBackgroundColor: GlobalVariables.backgroundColor,
+          colorScheme: const ColorScheme.light(
+            primary: GlobalVariables.secondaryColor,
           ),
-          onGenerateRoute: ((settings) => generateRoute(settings)),
-          // home: const BottomBar(),
-          home: Provider.of<UserProvider>(context).user.token.isNotEmpty
-              ? Provider.of<UserProvider>(context).user.type == 'user'
-                  ? const BottomBar()
-                  : const AdminScreen()
-              : const AuthScreen()),
+          appBarTheme: const AppBarTheme(
+            elevation: 0,
+            iconTheme: IconThemeData(color: Colors.black),
+          ),
+          // useMaterial3: true,
+        ),
+        onGenerateRoute: ((settings) => generateRoute(settings)),
+        home: const AdminScreen(),
+        // home: Provider.of<UserProvider>(context).user.token.isNotEmpty
+        //     ? Provider.of<UserProvider>(context).user.type == 'user'
+        //         ? const BottomBar()
+        //         : const AdminScreen()
+        //     : const AuthScreen(),
+      ),
     );
   }
 }
