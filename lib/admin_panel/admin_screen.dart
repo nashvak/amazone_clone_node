@@ -2,7 +2,6 @@ import 'package:ecommerce_app/admin_panel/screens/posts_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/global_variables.dart';
-import '../screens/profile/widgets/appbar.dart';
 
 class AdminScreen extends StatefulWidget {
   const AdminScreen({super.key});
@@ -97,7 +96,7 @@ class _AdminScreenState extends State<AdminScreen> {
                   ),
                 ),
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.all_inbox_outlined,
               ),
             ),

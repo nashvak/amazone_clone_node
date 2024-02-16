@@ -100,7 +100,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                         child: DottedBorder(
                           borderType: BorderType.RRect,
                           radius: const Radius.circular(10),
-                          dashPattern: [10, 4],
+                          dashPattern: const [10, 4],
                           strokeCap: StrokeCap.round,
                           child: Container(
                             width: double.infinity,
@@ -148,7 +148,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                   width: double.infinity,
                   child: DropdownButton<String>(
                     value: category,
-                    icon: Icon(Icons.keyboard_arrow_down),
+                    icon: const Icon(Icons.keyboard_arrow_down),
                     items: productCategories.map((String item) {
                       return DropdownMenuItem(
                         value: item,
@@ -162,7 +162,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
                     },
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 CustomButton(text: 'Add', onTap: () {})

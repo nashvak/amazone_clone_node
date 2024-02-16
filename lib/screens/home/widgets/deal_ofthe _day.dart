@@ -10,8 +10,8 @@ class DealOfTheDay extends StatelessWidget {
       children: [
         Container(
           alignment: Alignment.topLeft,
-          padding: EdgeInsets.only(left: 10, top: 15),
-          child: Text(
+          padding: const EdgeInsets.only(left: 10, top: 15),
+          child: const Text(
             'Deal of the Day',
             style: TextStyle(fontSize: 20),
           ),
@@ -23,18 +23,18 @@ class DealOfTheDay extends StatelessWidget {
         ),
         Container(
           alignment: Alignment.topLeft,
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             left: 15,
           ),
-          child: Text(
+          child: const Text(
             '\$99.12',
             style: TextStyle(fontSize: 18),
           ),
         ),
         Container(
           alignment: Alignment.topLeft,
-          padding: EdgeInsets.only(left: 15, top: 5, right: 40),
-          child: Text(
+          padding: const EdgeInsets.only(left: 15, top: 5, right: 40),
+          child: const Text(
             'Laptop',
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
@@ -73,7 +73,7 @@ class DealOfTheDay extends StatelessWidget {
           ),
         ),
         Container(
-          padding: EdgeInsets.symmetric(vertical: 15).copyWith(left: 15),
+          padding: const EdgeInsets.symmetric(vertical: 15).copyWith(left: 15),
           alignment: Alignment.topLeft,
           child: Text(
             'See all deals',

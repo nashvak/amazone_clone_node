@@ -8,7 +8,7 @@ class PostsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: const Center(
         child: Text('posts'),
       ),
       floatingActionButton: FloatingActionButton(
@@ -17,7 +17,7 @@ class PostsScreen extends StatelessWidget {
           Navigator.pushNamed(context, AddProductScreen.routeName);
         },
         tooltip: 'Add product',
-        child: Icon(
+        child: const Icon(
           Icons.add,
         ),
       ),
