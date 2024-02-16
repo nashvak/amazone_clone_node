@@ -1,4 +1,5 @@
 import 'package:dotted_border/dotted_border.dart';
+import 'package:ecommerce_app/common/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/global_variables.dart';
@@ -12,6 +13,22 @@ class AddProductScreen extends StatefulWidget {
 }
 
 class _AddProductScreenState extends State<AddProductScreen> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController descriptionController = TextEditingController();
+
+  TextEditingController quantityController = TextEditingController();
+
+  TextEditingController priceController = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    nameController.dispose();
+    descriptionController.dispose();
+    quantityController.dispose();
+    priceController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,6 +76,35 @@ class _AddProductScreenState extends State<AddProductScreen> {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 30,
+                ),
+                CustomTextField(
+                    controller: nameController, hintText: ' Product Name'),
+                SizedBox(
+                  height: 10,
+                ),
+                CustomTextField(
+                  controller: descriptionController,
+                  hintText: ' Description',
+                  maxLines: 7,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                CustomTextField(
+                    controller: priceController, hintText: ' Price'),
+                SizedBox(
+                  height: 10,
+                ),
+                CustomTextField(
+                    controller: quantityController, hintText: ' Quantity'),
+                SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  width: ,
+                )
               ],
             ),
           ),
