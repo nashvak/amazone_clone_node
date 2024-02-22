@@ -8,6 +8,7 @@ const db='mongodb+srv://nashvakizhakkayil:monsterasif@cluster0.demz3g6.mongodb.n
 
 //IMPORTS FROM OTHER FILES
 const authRouter=require('./routes/auth.js');
+const adminRouter = require('./routes/admin.js');
 
 //  INITIALIZATION
 const PORT=3000;
@@ -15,6 +16,7 @@ const app=express();
 //  MIDDLEWARE
 app.use(express.json())
 app.use(authRouter);
+app.use(adminRouter);
 //connections
 
 mongoose.connect(db).then(()=>{

@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:ecommerce_app/admin_panel/model/product_model.dart';
+import 'package:ecommerce_app/admin_panel/services/admin_services.dart';
 import 'package:ecommerce_app/common/custom_button.dart';
 import 'package:ecommerce_app/common/custom_textfield.dart';
 import 'package:ecommerce_app/common/utils.dart';
@@ -24,7 +26,8 @@ class _AddProductScreenState extends State<AddProductScreen> {
   TextEditingController quantityController = TextEditingController();
 
   TextEditingController priceController = TextEditingController();
-
+  final addProductFormKey = GlobalKey<FormState>();
+  final AdminServices adminServices = AdminServices();
   @override
   void dispose() {
     super.dispose();
@@ -41,6 +44,19 @@ class _AddProductScreenState extends State<AddProductScreen> {
     'Books',
     'Fashions',
   ];
+  void sellProduct() {
+    if (addProductFormKey.currentState!.validate() && images.isNotEmpty) {
+      adminServices.sellProduct(
+          context: context,
+          name: nameController.text,
+          description: descriptionController.text,
+          price: double.parse(priceController.text),
+          quantity: double.parse(quantityController.text),
+          category: category,
+          images: images);
+    }
+  }
+
   String category = 'Mobiles';
   List<File> images = [];
   void selectImages() async {
@@ -70,6 +86,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
       ),
       body: SingleChildScrollView(
         child: Form(
+          key: addProductFormKey,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Column(
@@ -165,7 +182,11 @@ class _AddProductScreenState extends State<AddProductScreen> {
                 const SizedBox(
                   height: 10,
                 ),
-                CustomButton(text: 'Add', onTap: () {})
+                CustomButton(
+                    text: 'Add',
+                    onTap: () {
+                      sellProduct();
+                    })
               ],
             ),
           ),
