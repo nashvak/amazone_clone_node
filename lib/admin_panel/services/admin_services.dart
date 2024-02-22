@@ -4,6 +4,8 @@ import 'package:cloudinary_public/cloudinary_public.dart';
 import 'package:ecommerce_app/common/utils.dart';
 import 'package:flutter/material.dart';
 
+import '../model/product_model.dart';
+
 class AdminServices {
   void sellProduct({
     required BuildContext context,
@@ -24,6 +26,13 @@ class AdminServices {
         //download url get from cloudinary
         imageUrls.add(response.secureUrl);
       }
+      Product product = Product(
+          name: name,
+          description: description,
+          quantity: quantity,
+          images: imageUrls,
+          category: category,
+          price: price);
     } catch (e) {
       showSnackbar(context, e.toString());
     }
