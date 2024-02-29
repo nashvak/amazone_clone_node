@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dotted_border/dotted_border.dart';
-import 'package:ecommerce_app/admin_panel/model/product_model.dart';
 import 'package:ecommerce_app/admin_panel/services/admin_services.dart';
 import 'package:ecommerce_app/common/custom_button.dart';
 import 'package:ecommerce_app/common/custom_textfield.dart';
