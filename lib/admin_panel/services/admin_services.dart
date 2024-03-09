@@ -64,7 +64,7 @@ class AdminServices {
     final userProvider = Provider.of<UserProvider>(context);
     List<Product> productList = [];
     try {
-      http.Response response = await http.post(
+      http.Response response = await http.get(
         Uri.parse('$uri/admin/get-product'),
         headers: <String, String>{
           'Content-type': 'application/json;charset=UTF-8',
@@ -90,5 +90,28 @@ class AdminServices {
       showSnackbar(context, e.toString());
     }
     return productList;
+  }
+
+  void deleteProduct(
+      {required BuildContext context,
+      required Product product,
+      required VoidCallback onSuccess}) async {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+
+    try {
+      http.Response response =
+          await http.post(Uri.parse('$uri/admin/delete-product'),
+              headers: <String, String>{
+                'Content-type': 'application/json;charset=UTF-8',
+                'x-auth-token': userProvider.user.token
+              },
+              body: jsonEncode({
+                'id': product.id,
+              }));
+      // ignore: use_build_context_synchronously
+      httpErrorHandle(response: response, context: context, onSuccess: () {});
+    } catch (e) {
+      showSnackbar(context, e.toString());
+    }
   }
 }

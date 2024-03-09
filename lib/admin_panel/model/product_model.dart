@@ -7,6 +7,7 @@ class Product {
   final List<String> images;
   final String category;
   final double price;
+  final String? id;
 
   Product({
     required this.name,
@@ -15,6 +16,7 @@ class Product {
     required this.images,
     required this.category,
     required this.price,
+    this.id,
   });
 
   Map<String, dynamic> toMap() {
@@ -25,6 +27,7 @@ class Product {
       'images': images,
       'category': category,
       'price': price,
+      'id': id,
     };
   }
 
@@ -36,6 +39,7 @@ class Product {
       images: List<String>.from(map['images']),
       category: map['category'] ?? '',
       price: map['price']?.toDouble() ?? 0.0,
+      id: map['_id'],
     );
   }
 
