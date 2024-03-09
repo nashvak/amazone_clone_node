@@ -42,6 +42,21 @@ class _CategoryDealsState extends State<CategoryDeals> {
               ),
             ),
           ),
+          SizedBox(
+            height: 170,
+            child: GridView.builder(
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.only(left: 15),
+                itemCount: 10,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 1,
+                  childAspectRatio: 1.4,
+                  mainAxisSpacing: 10,
+                ),
+                itemBuilder: (context, index) {
+                  return Text('hello');
+                }),
+          )
         ],
       ),
     );
