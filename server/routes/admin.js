@@ -24,4 +24,17 @@ res.json(products); // return the products
 res.status(500).json({error:e.message});
     }
 });
+
+//deleting the product
+adminRouter.get("/admin/delete-product",admin,async (req,res)=>{
+try {
+    const {id}=req.body;
+    let product=await Product.findByIdAndDelete(id);
+    product=await product.save();
+    res.json(product);
+} catch (e) {
+    res.status(500).json({error:e.message});
+    
+}
+})
 module.exports=adminRouter;
