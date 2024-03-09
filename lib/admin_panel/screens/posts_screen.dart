@@ -5,6 +5,8 @@ import 'package:ecommerce_app/admin_panel/services/admin_services.dart';
 import 'package:ecommerce_app/constants/global_variables.dart';
 import 'package:flutter/material.dart';
 
+import '../../user_panel/screens/profile/widgets/single_product.dart';
+
 class PostsScreen extends StatefulWidget {
   const PostsScreen({super.key});
 
@@ -17,12 +19,13 @@ class _PostsScreenState extends State<PostsScreen> {
   List<Product>? products;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+    fetchAllProducts();
   }
 
   fetchAllProducts() async {
-    await adminServices.fetchAllProducts(context);
+    products = await adminServices.fetchAllProducts(context);
+    setState(() {});
   }
 
   @override
@@ -30,9 +33,40 @@ class _PostsScreenState extends State<PostsScreen> {
     return products == null
         ? const Loader()
         : Scaffold(
-            body: const Center(
-              child: Text('posts'),
-            ),
+            body: GridView.builder(
+                itemCount: products!.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
+                itemBuilder: (context, index) {
+                  final productData = products![index];
+                  return Column(
+                    children: [
+                      SizedBox(
+                        height: 140,
+                        child: SingleProduct(
+                          image: productData.images[0],
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              productData.name,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.delete_outline,
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  );
+                }),
             floatingActionButton: FloatingActionButton(
               backgroundColor: GlobalVariables.selectedNavBarColor,
               onPressed: () {
