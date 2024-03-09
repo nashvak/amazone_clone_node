@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/user_panel/screens/home/widgets/category_deals.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../constants/global_variables.dart';
@@ -5,7 +6,9 @@ import '../../../../constants/global_variables.dart';
 class TopCategories extends StatelessWidget {
   const TopCategories({Key? key}) : super(key: key);
 
-  void navigateToCategoryPage(BuildContext context, String category) {}
+  void navigateToCategoryPage(BuildContext context, String category) {
+    Navigator.pushNamed(context, CategoryDeals.routeName, arguments: category);
+  }
 
   @override
   Widget build(BuildContext context) {

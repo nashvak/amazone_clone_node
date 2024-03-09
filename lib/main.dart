@@ -35,12 +35,12 @@ class MyApp extends StatelessWidget {
         // useMaterial3: true,
       ),
       onGenerateRoute: ((settings) => generateRoute(settings)),
-      home: const AdminScreen(),
-      // home: Provider.of<UserProvider>(context).user.token.isNotEmpty
-      //     ? Provider.of<UserProvider>(context).user.type == 'user'
-      //         ? const BottomBar()
-      //         : const AdminScreen()
-      //     : const AuthScreen(),
+      // home: const AdminScreen(),
+      home: Provider.of<UserProvider>(context).user.token.isNotEmpty
+          ? Provider.of<UserProvider>(context).user.type == 'user'
+              ? const BottomBar()
+              : const AdminScreen()
+          : const AuthScreen(),
     );
   }
 }
