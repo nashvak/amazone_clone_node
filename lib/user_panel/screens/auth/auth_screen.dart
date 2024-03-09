@@ -3,7 +3,7 @@ import 'package:ecommerce_app/common/custom_textfield.dart';
 import 'package:ecommerce_app/constants/global_variables.dart';
 import 'package:flutter/material.dart';
 
-import '../../api_calls/auth/auth_service.dart';
+import '../../../api_calls/auth/auth_service.dart';
 
 enum Auth { signin, signup }
 

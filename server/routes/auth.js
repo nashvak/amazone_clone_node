@@ -16,9 +16,10 @@ authRouter.post("/api/signup",async (req,res)=>{
     }
     const hashPassword=await bcryptjs.hash(password,8);
     let user=new User({
+        name,
         email,
         password:hashPassword,
-        name,
+        
     })
     user=await user.save();
     //return that data to the user

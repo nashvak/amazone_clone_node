@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../constants/global_variables.dart';
+import '../../../../constants/global_variables.dart';
 import '../../../providers/auth/user_provider.dart';
 
 class BelowAppbar extends StatelessWidget {

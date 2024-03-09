@@ -1,7 +1,7 @@
 import 'package:ecommerce_app/admin_panel/screens/add_product_screen.dart';
-import 'package:ecommerce_app/screens/auth/auth_screen.dart';
+import 'package:ecommerce_app/user_panel/screens/auth/auth_screen.dart';
 import 'package:ecommerce_app/common/bottonbar.dart';
-import 'package:ecommerce_app/screens/home/homescreen.dart';
+import 'package:ecommerce_app/user_panel/screens/home/homescreen.dart';
 import 'package:flutter/material.dart';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {

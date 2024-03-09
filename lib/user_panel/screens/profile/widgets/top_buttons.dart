@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/screens/profile/widgets/account_button.dart';
+import 'package:ecommerce_app/user_panel/screens/profile/widgets/account_button.dart';
 import 'package:flutter/material.dart';
 
 class TopButtons extends StatelessWidget {

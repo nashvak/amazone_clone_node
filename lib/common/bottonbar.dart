@@ -1,6 +1,6 @@
-import 'package:ecommerce_app/screens/cart/cart_screen.dart';
-import 'package:ecommerce_app/screens/home/homescreen.dart';
-import 'package:ecommerce_app/screens/profile/profile_screen.dart';
+import 'package:ecommerce_app/user_panel/screens/cart/cart_screen.dart';
+import 'package:ecommerce_app/user_panel/screens/home/homescreen.dart';
+import 'package:ecommerce_app/user_panel/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import '../constants/global_variables.dart';
 

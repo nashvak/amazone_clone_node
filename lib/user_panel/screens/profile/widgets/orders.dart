@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants/global_variables.dart';
+import '../../../../constants/global_variables.dart';
 import 'single_product.dart';
 
 class YourOrders extends StatefulWidget {

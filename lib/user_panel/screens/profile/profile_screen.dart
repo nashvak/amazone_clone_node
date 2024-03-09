@@ -1,5 +1,5 @@
-import 'package:ecommerce_app/screens/profile/widgets/orders.dart';
-import 'package:ecommerce_app/screens/profile/widgets/top_buttons.dart';
+import 'package:ecommerce_app/user_panel/screens/profile/widgets/orders.dart';
+import 'package:ecommerce_app/user_panel/screens/profile/widgets/top_buttons.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/appbar.dart';
