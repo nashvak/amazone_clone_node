@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/user_panel/services/home_Services.dart';
+import 'package:ecommerce_app/user_panel/services/home_services.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../admin_panel/model/product_model.dart';
@@ -19,7 +19,6 @@ class _CategoryDealsState extends State<CategoryDeals> {
   final HomeServices homeServices = HomeServices();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 
@@ -43,7 +42,7 @@ class _CategoryDealsState extends State<CategoryDeals> {
           ),
           title: Text(
             widget.category,
-            style: TextStyle(color: Colors.black),
+            style: const TextStyle(color: Colors.black),
           ),
         ),
       ),
@@ -66,7 +65,7 @@ class _CategoryDealsState extends State<CategoryDeals> {
                   height: 170,
                   child: GridView.builder(
                       scrollDirection: Axis.horizontal,
-                      padding: EdgeInsets.only(left: 15),
+                      padding: const EdgeInsets.only(left: 15),
                       itemCount: productList!.length,
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(

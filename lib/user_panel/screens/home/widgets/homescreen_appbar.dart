@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 
 import '../../../../constants/global_variables.dart';
+import '../../../features/search/screens/search_screen.dart';
 
-class HomescreenAppbar extends StatelessWidget {
+class HomescreenAppbar extends StatefulWidget {
   const HomescreenAppbar({
     super.key,
   });
+
+  @override
+  State<HomescreenAppbar> createState() => _HomescreenAppbarState();
+}
+
+class _HomescreenAppbarState extends State<HomescreenAppbar> {
+  navigateToSearchScreen(String query) {
+    Navigator.pushNamed(context, SearchScreen.routeName, arguments: query);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +36,7 @@ class HomescreenAppbar extends StatelessWidget {
                 borderRadius: BorderRadius.circular(7),
                 elevation: 1,
                 child: TextFormField(
+                  onFieldSubmitted: navigateToSearchScreen,
                   decoration: InputDecoration(
                     prefixIcon: InkWell(
                       onTap: () {},

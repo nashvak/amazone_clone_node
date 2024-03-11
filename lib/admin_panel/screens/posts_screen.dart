@@ -45,7 +45,7 @@ class _PostsScreenState extends State<PostsScreen> {
         : Scaffold(
             body: GridView.builder(
                 itemCount: products!.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
                 itemBuilder: (context, index) {
                   final productData = products![index];

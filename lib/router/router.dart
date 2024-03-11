@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/admin_panel/screens/add_product_screen.dart';
+import 'package:ecommerce_app/user_panel/features/search/screens/search_screen.dart';
 import 'package:ecommerce_app/user_panel/screens/auth/auth_screen.dart';
 import 'package:ecommerce_app/common/bottonbar.dart';
 import 'package:ecommerce_app/user_panel/screens/home/homescreen.dart';
@@ -33,6 +34,14 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         settings: routeSettings,
         builder: (_) => CategoryDeals(
           category: category,
+        ),
+      );
+    case SearchScreen.routeName:
+      var searchQuery = routeSettings.arguments as String;
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => SearchScreen(
+          searchQuery: searchQuery,
         ),
       );
     default:
