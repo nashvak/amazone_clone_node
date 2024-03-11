@@ -1,8 +1,9 @@
 import 'package:ecommerce_app/admin_panel/screens/widgets/loader.dart';
 import 'package:ecommerce_app/user_panel/features/search/services/search_services.dart';
+import 'package:ecommerce_app/user_panel/screens/home/widgets/address_box.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../admin_panel/model/product_model.dart';
+import '../../../screens/home/widgets/homescreen_appbar.dart';
 
 class SearchScreen extends StatefulWidget {
   static const String routeName = '/search-screen';
@@ -18,7 +19,6 @@ class _SearchScreenState extends State<SearchScreen> {
   List<Product>? products;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     fetchSearchedProduct();
   }
@@ -31,10 +31,29 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return products == null
-        ? const Loader()
-        : Scaffold(
-            body: Center(child: Text(widget.searchQuery)),
-          );
+    return Scaffold(
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(60),
+        child: HomescreenAppbar(),
+      ),
+      body: products == null
+          ? const Loader()
+          : Column(
+              children: [
+                const AddressBox(),
+                const SizedBox(
+                  height: 10,
+                ),
+                Expanded(
+                    child: ListView.builder(
+                        itemCount: products!.length,
+                        itemBuilder: (context, index) {
+                          return const Row(
+                            children: [],
+                          );
+                        }))
+              ],
+            ),
+    );
   }
 }
