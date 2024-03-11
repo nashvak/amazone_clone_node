@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/user_panel/features/product_details/screens/product_details.dart';
 import 'package:ecommerce_app/user_panel/services/home_services.dart';
 import 'package:flutter/material.dart';
 
@@ -75,25 +76,32 @@ class _CategoryDealsState extends State<CategoryDeals> {
                       ),
                       itemBuilder: (context, index) {
                         final product = productList![index];
-                        return Column(
-                          children: [
-                            SizedBox(
-                              height: 130,
-                              child: DecoratedBox(
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: Colors.black, width: 0.5),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(20),
-                                  child: Image.network(
-                                    product.images[0],
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, ProductDeatils.routeName,
+                                arguments: product);
+                          },
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 130,
+                                child: DecoratedBox(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: Colors.black, width: 0.5),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(20),
+                                    child: Image.network(
+                                      product.images[0],
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            Container()
-                          ],
+                              Container()
+                            ],
+                          ),
                         );
                       }),
                 )

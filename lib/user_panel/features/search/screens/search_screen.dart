@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/admin_panel/screens/widgets/loader.dart';
+import 'package:ecommerce_app/user_panel/features/product_details/screens/product_details.dart';
 import 'package:ecommerce_app/user_panel/features/search/services/search_services.dart';
 import 'package:ecommerce_app/user_panel/screens/home/widgets/address_box.dart';
 import 'package:flutter/material.dart';
@@ -48,8 +49,13 @@ class _SearchScreenState extends State<SearchScreen> {
                     child: ListView.builder(
                         itemCount: products!.length,
                         itemBuilder: (context, index) {
-                          return const Row(
-                            children: [],
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, ProductDeatils.routeName,
+                                  arguments: products![index]);
+                            },
+                            child: ProductDeatils(product: products![index]),
                           );
                         }))
               ],

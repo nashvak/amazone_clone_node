@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
+  final Color? color;
 
   const CustomButton({
     Key? key,
     required this.text,
     required this.onTap,
+    this.color,
   }) : super(key: key);
 
   @override
@@ -18,11 +20,13 @@ class CustomButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         minimumSize: const Size(double.infinity, 50),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-        backgroundColor: GlobalVariables.secondaryColor,
+        backgroundColor: color == null ? GlobalVariables.secondaryColor : color,
       ),
       child: Text(
         text,
-        style: const TextStyle(color: GlobalVariables.backgroundColor),
+        style: TextStyle(
+            color:
+                color == null ? GlobalVariables.backgroundColor : Colors.black),
       ),
     );
   }
