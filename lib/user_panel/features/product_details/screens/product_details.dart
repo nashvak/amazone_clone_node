@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ecommerce_app/user_panel/features/product_details/services/product_details_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -18,6 +19,13 @@ class ProductDeatils extends StatefulWidget {
 }
 
 class _ProductDeatilsState extends State<ProductDeatils> {
+  final ProductDetailsServices productDetailsServices =
+      ProductDetailsServices();
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -149,7 +157,13 @@ class _ProductDeatilsState extends State<ProductDeatils> {
                 Icons.star,
                 color: GlobalVariables.secondaryColor,
               ),
-              onRatingUpdate: (rating) {},
+              onRatingUpdate: (rating) {
+                productDetailsServices.rateProduct(
+                  context: context,
+                  product: widget.product,
+                  rating: rating,
+                );
+              },
             )
           ],
         ),
