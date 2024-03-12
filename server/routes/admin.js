@@ -1,7 +1,7 @@
 const express=require('express');
 const admin = require('../middlewares/admin');
 const adminRouter=express.Router();
-const Product=require("../user_model/product")
+const {Product}=require("../user_model/product")
 //creating admin middleware
 adminRouter.post('/admin/add-product',admin,async(req,res)=>{
     try{

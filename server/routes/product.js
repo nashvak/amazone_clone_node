@@ -1,7 +1,7 @@
 const express=require('express');
 const productRouter=express.Router();
 const auth=require('../middlewares/auth');
-const Product=require("../user_model/product");
+const {Product}=require("../user_model/product");
 
 // "/api/products?category=Essentials"
 productRouter.get('/api/products',auth,async(req,res)=>{

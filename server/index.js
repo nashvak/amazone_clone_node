@@ -10,6 +10,7 @@ const db='mongodb+srv://nashvakizhakkayil:monsterasif@cluster0.demz3g6.mongodb.n
 const authRouter=require('./routes/auth.js');
 const adminRouter = require('./routes/admin.js');
 const productRouter=require('./routes/product.js');
+const userRouter = require('./routes/user.js');
 
 //  INITIALIZATION
 const PORT=3000;
@@ -19,6 +20,7 @@ app.use(express.json())
 app.use(authRouter);
 app.use(adminRouter);
 app.use(productRouter);
+app.use(userRouter);
 //connections
 
 mongoose.connect(db).then(()=>{
