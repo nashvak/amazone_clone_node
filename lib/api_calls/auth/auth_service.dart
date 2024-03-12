@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:ecommerce_app/common/error_handling.dart';
 import 'package:ecommerce_app/common/utils.dart';
 import 'package:ecommerce_app/constants/global_variables.dart';
-import 'package:ecommerce_app/user_panel/models/models.dart';
+import 'package:ecommerce_app/user_panel/models/user_model.dart';
 import 'package:ecommerce_app/user_panel/providers/auth/user_provider.dart';
 import 'package:ecommerce_app/common/bottonbar.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +29,7 @@ class AuthService {
         address: '',
         type: '',
         token: '',
+        cart: [],
       );
 
       http.Response response = await http.post(
