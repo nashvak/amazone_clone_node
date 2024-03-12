@@ -4,7 +4,6 @@ import 'package:ecommerce_app/user_panel/screens/home/widgets/deal_ofthe%20_day.
 import 'package:ecommerce_app/user_panel/screens/home/widgets/top_catagories.dart';
 import 'package:flutter/material.dart';
 
-import '../../../common/custom_button.dart';
 import 'widgets/homescreen_appbar.dart';
 
 class HomeScreen extends StatelessWidget {
